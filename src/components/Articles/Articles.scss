@@ -1,0 +1,25 @@
+article{
+  text-align: left;
+  background: #fffff0;
+  p,ul,ol{
+    margin: 1em 0;
+  }
+  p::first-letter{
+    margin-left: 2em;
+  }
+  pre{
+    background: #fff;
+    position: relative;
+    padding: 0.5em 0;
+    outline: #7f7f7f 1px solid;
+    overflow-x: scroll;
+    code{
+      font-size: 0.85em;
+      margin: 0.5em 0 0.5em 1em;
+      display: grid;
+      span{
+
+      }
+    }
+  }
+}
