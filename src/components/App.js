@@ -6,6 +6,7 @@ import {Footer} from "./Footer/Footer";
 import {Articles} from "./Articles/Articles";
 import {Posts} from "./Posts/Posts";
 import {HomePage} from "./HomePage/HomePage";
+import {Editor} from "./Editor/Editor";
 
 
 const NoMatch = () =>{
@@ -23,6 +24,7 @@ function App() {
                     <Route index element={<HomePage/>}/>
                     <Route path={"/posts"} element={<Posts/>}/>
                     <Route path={"/posts/:articleId"} element={<Articles/>}/>
+                    <Route path={"/editor"} element={<Editor/>}/>
                     <Route path="*" element={<NoMatch/>}/>
                 </Route>
             </Routes>
