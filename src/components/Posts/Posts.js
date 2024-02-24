@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 
 const Post = (props) => {
-    const {articleTitle, content} = props;
+    const {articleTitle, content, id} = props;
     return <div className="post-section">
-        <Link to={`/posts/${articleTitle}`}>
+        <Link to={`/posts/${id}`}>
             <div className="post-background">
                 <div className="post-warpper">
                     <div className="post-image">
@@ -16,20 +16,17 @@ const Post = (props) => {
                         <div className="post-desc">
                             <p>{content}</p>
                         </div>
-                        <div className="post-operation">Like tags: 1 2 3</div>
-
                     </div>
                 </div>
             </div>
         </Link>
-
     </div>
 }
 export const Posts = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchAllData = async () => {
             try {
                 const response = await fetch('http://localhost:3800/articles');
                 if (!response.ok) {
@@ -42,13 +39,13 @@ export const Posts = () => {
                 console.log(error)
             }
         };
-        fetchData();
+        fetchAllData();
     }, []);
     return <>
         <div className="posts">
             <div className="page-title">Posts</div>
-            {data?data.map((id,index) =>{
-                return <Post articleTitle={id.title} content={id.content} key={index}/>
+            {data?data.map((postData,index) =>{
+                return <Post articleTitle={postData.title} content={postData.content} id={postData.id} key={index}/>
             }):"loading"}
         </div>
     </>

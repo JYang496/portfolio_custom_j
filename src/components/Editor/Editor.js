@@ -17,7 +17,7 @@ export function Editor() {
         });
     }
 
-    const onChangeDescription = (value) => {
+    const onChangeContent = (value) => {
         setArticleInfo({
             ...articleInfo,
             content: value
@@ -79,7 +79,7 @@ export function Editor() {
                 modules={modules}
                 theme='snow'
                 value={articleInfo.content}
-                onChange={onChangeDescription}
+                onChange={onChangeContent}
                 style={{minHeight: '300px'}}
             />
             <h1>{articleInfo.title}</h1>
