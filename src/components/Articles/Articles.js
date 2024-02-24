@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 
 export const Articles = () => {
   const { articleId } = useParams();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(``);
 
   useEffect(() => {
     const fetchSingleData = async () => {
@@ -20,13 +20,18 @@ export const Articles = () => {
         console.log(error)
       }
     };
-    fetchSingleData();
+    fetchSingleData()
   }, [articleId]);
+
+  useEffect(()=>{
+    let content = document.getElementById('content')
+    content.innerHTML = data.content
+  },[data])
+
   return <>
     <div className="page-title">{data?data.title:`loading title`}</div>
-    <p className="content-meta">Feb 14, 2024</p>
-    <article>
-      {data?data.content:`loading content`}
+    <p className="content-meta">{data?data.createdAt:`loading time`}</p>
+    <article id='content'>
     </article>
   </>
 }
