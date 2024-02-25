@@ -1,7 +1,7 @@
 import './Editor.sass'
 import ReactQuill from "react-quill"
 import 'react-quill/dist/quill.snow.css'
-import {useMemo, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 
 
 export function Editor() {
@@ -9,6 +9,15 @@ export function Editor() {
         title: '',
         content: ''
     });
+
+    const [submitDisabled, setSubmitDisabled] = useState(true)
+    useEffect(()=>{
+        if (articleInfo.title === '' || articleInfo.content === ''){
+            setSubmitDisabled(true)
+        } else {
+            setSubmitDisabled(false)
+        }
+    },[articleInfo])
 
     const onChangeValue = (e) => {
         setArticleInfo({
@@ -34,13 +43,13 @@ export function Editor() {
 
     const Button = ({ onClick, children }) => {
         return (
-            <button onClick={onClick}>
+            <button disabled={submitDisabled} onClick={onClick}>
                 {children}
             </button>
         );
     };
 
-    const handleClick = () => {
+    const handleSubmit = () => {
         console.log(JSON.stringify(articleInfo))
         fetch('http://localhost:3800/articles', options)
             .then(response => {
@@ -74,16 +83,14 @@ export function Editor() {
         <div>
             <label className="font-weight-bold"> Title <span className="required"> * </span> </label>
             <input type="text" name="title" value={articleInfo.title} onChange={onChangeValue}  className="form-control" placeholder="Title" required />
-            <Button onClick={handleClick}>Submit</Button>
+            <Button onClick={handleSubmit}>Submit</Button>
             <ReactQuill
                 modules={modules}
                 theme='snow'
                 value={articleInfo.content}
                 onChange={onChangeContent}
-                style={{minHeight: '300px'}}
+                style={{minHeight: '500px'}}
             />
-            <h1>{articleInfo.title}</h1>
-            <h1>{articleInfo.content}</h1>
         </div>
     );
 }
