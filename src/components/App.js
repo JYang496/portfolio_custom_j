@@ -22,9 +22,6 @@ function App() {
             <Routes>
                 <Route path="/" element={<SharedLayout/>}>
                     <Route index element={<HomePage/>}/>
-                    <Route path={"/posts"} element={<Posts/>}/>
-                    <Route path={"/posts/:articleId"} element={<Articles/>}/>
-                    <Route path={"/editor"} element={<Editor/>}/>
                     <Route path="*" element={<NoMatch/>}/>
                 </Route>
             </Routes>
