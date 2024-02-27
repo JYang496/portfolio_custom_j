@@ -2,6 +2,7 @@ import './App.scss';
 import {BrowserRouter, Outlet, Route} from "react-router-dom";
 import {Routes} from "react-router";
 import {HomePage} from "./HomePage/HomePage";
+import {Header} from "./Header/Header";
 
 
 const NoMatch = () =>{
@@ -27,6 +28,7 @@ function App() {
 
 const SharedLayout = () =>{
     return<>
+        <Header/>
         <Outlet/>
     </>
 }
