@@ -7,7 +7,7 @@ export const Header = () => {
             <div className="d-flex flex-column">
 
                 <div className="profile">
-                    <img src="https://github.com/JYang496/portfolio/blob/main/public/profile-img.jpg?raw=true" alt="" className="img-fluid rounded-circle"/>
+                    <img src="https://github.com/JYang496/portfolio/blob/main/public/img/profile-img.jpg?raw=true" alt="" className="img-fluid rounded-circle"/>
                         <h1 className="text-light"><a href="/">Alex Smith</a></h1>
                         <div className="social-links mt-3 text-center">
                             <a href="/" className="twitter"><i className="bx bxl-twitter"></i></a>
