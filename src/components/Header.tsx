@@ -1,4 +1,5 @@
 import './styles/header.scss'
+import './styles/nav.scss'
 import 'react-bootstrap'
 
 export const Header = () => {
@@ -7,7 +8,7 @@ export const Header = () => {
           <div className="d-flex flex-column">
 
               <div className="profile">
-                  <img src="" alt="" className="img-fluid rounded-circle"/>
+                  <img src="https://github.com/JYang496/portfolio/blob/main/src/img/profile-img.jpg?raw=true" alt="" className="img-fluid rounded-circle"/>
                       <h1 className="text-light"><a href="/">Jinhua Yang</a></h1>
                       <div className="social-links mt-3 text-center">
                           <a href="/" className="twitter"><i className="bx bxl-twitter"></i></a>
