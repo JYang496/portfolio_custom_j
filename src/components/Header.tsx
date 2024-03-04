@@ -1,5 +1,4 @@
-import './styles/header.scss'
-import './styles/nav.scss'
+import './styles/style.scss'
 import 'react-bootstrap'
 
 export const Header = () => {
