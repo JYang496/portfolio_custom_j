@@ -1,5 +1,6 @@
 import "./styles/general.scss"
 import {useProgressBar} from 'react-aria'
+import {CarouselSlides} from "./CarouselSlides"
 
 export const Main = () => {
     function ProgressBar(props:any) {
@@ -301,8 +302,6 @@ export const Main = () => {
                         <div className="portfolio-wrap">
                             <img src="https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-1.jpg?raw=true" className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a href="/" data-gallery="portfolioGallery"
-                                       className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
                                     <a href="/" title="More Details"><i className="bx bx-link"></i></a>
                                 </div>
                         </div>
@@ -312,8 +311,6 @@ export const Main = () => {
                         <div className="portfolio-wrap">
                             <img src="https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-2.jpg?raw=true" className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a href="/" data-gallery="portfolioGallery"
-                                       className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
                                     <a href="/" title="More Details"><i className="bx bx-link"></i></a>
                                 </div>
                         </div>
@@ -323,8 +320,6 @@ export const Main = () => {
                         <div className="portfolio-wrap">
                             <img src="https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-3.jpg?raw=true" className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a href="/" data-gallery="portfolioGallery"
-                                       className="portfolio-lightbox" title="App 2"><i className="bx bx-plus"></i></a>
                                     <a href="/" title="More Details"><i className="bx bx-link"></i></a>
                                 </div>
                         </div>
@@ -334,8 +329,6 @@ export const Main = () => {
                         <div className="portfolio-wrap">
                             <img src="https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-4.jpg?raw=true" className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a href="/" data-gallery="portfolioGallery"
-                                       className="portfolio-lightbox" title="Card 2"><i className="bx bx-plus"></i></a>
                                     <a href="/" title="More Details"><i className="bx bx-link"></i></a>
                                 </div>
                         </div>
@@ -345,8 +338,6 @@ export const Main = () => {
                         <div className="portfolio-wrap">
                             <img src="https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-5.jpg?raw=true" className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a href="/" data-gallery="portfolioGallery"
-                                       className="portfolio-lightbox" title="Web 2"><i className="bx bx-plus"></i></a>
                                     <a href="/" title="More Details"><i className="bx bx-link"></i></a>
                                 </div>
                         </div>
@@ -356,8 +347,6 @@ export const Main = () => {
                         <div className="portfolio-wrap">
                             <img src="https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-6.jpg?raw=true" className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a href="/" data-gallery="portfolioGallery"
-                                       className="portfolio-lightbox" title="App 3"><i className="bx bx-plus"></i></a>
                                     <a href="/" title="More Details"><i className="bx bx-link"></i></a>
                                 </div>
                         </div>
@@ -367,8 +356,6 @@ export const Main = () => {
                         <div className="portfolio-wrap">
                             <img src="https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-7.jpg?raw=true" className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a href="/" data-gallery="portfolioGallery"
-                                       className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a>
                                     <a href="/" title="More Details"><i className="bx bx-link"></i></a>
                                 </div>
                         </div>
@@ -378,8 +365,6 @@ export const Main = () => {
                         <div className="portfolio-wrap">
                             <img src="https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-8.jpg?raw=true" className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a href="/" data-gallery="portfolioGallery"
-                                       className="portfolio-lightbox" title="Card 3"><i className="bx bx-plus"></i></a>
                                     <a href="/" title="More Details"><i className="bx bx-link"></i></a>
                                 </div>
                         </div>
@@ -389,8 +374,6 @@ export const Main = () => {
                         <div className="portfolio-wrap">
                             <img src="https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-9.jpg?raw=true" className="img-fluid" alt=""/>
                                 <div className="portfolio-links">
-                                    <a href="/" data-gallery="portfolioGallery"
-                                       className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
                                     <a href="/" title="More Details"><i className="bx bx-link"></i></a>
                                 </div>
                         </div>
@@ -451,6 +434,7 @@ export const Main = () => {
 
             </div>
         </section>
+        <CarouselSlides/>
 
 
     </main>
