@@ -1,22 +1,37 @@
 export const items = [
     {
         filterType:"filter-app",
-        image:"https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-1.jpg?raw=true",
+        title:"title one",
         linkTo:""
     },
     {
         filterType:"filter-web",
-        image:"https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-2.jpg?raw=true",
+        title:"two",
         linkTo:""
     },
     {
         filterType:"filter-card",
-        image:"https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-3.jpg?raw=true",
+        title:"https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-3.jpg?raw=true",
         linkTo:""
     },
     {
         filterType:"filter-app",
-        image:"https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-4.jpg?raw=true",
+        title:"four",
+        linkTo:""
+    },
+    {
+        filterType:"filter-web",
+        title:"tw24314o",
+        linkTo:""
+    },
+    {
+        filterType:"filter-card",
+        title:"https://github.com/JYang496/portfolio/blob/main/src/img/portfolioraw=true",
+        linkTo:""
+    },
+    {
+        filterType:"filter-app",
+        title:"foursdsd",
         linkTo:""
     },
 ]

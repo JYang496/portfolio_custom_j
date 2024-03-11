@@ -4,12 +4,9 @@ import {items} from "../data/items";
 export const Portfolio = () => {
 
     const PortfolioItem = (e: any) =>{
-        return <div className={`col-lg-4 col-md-6 portfolio-item ${e.filterType}`}>
+        return <div className={`portfolio-item ${e.filterType}`}>
             <div className="portfolio-wrap">
-                <img src={e.image} className="img-fluid" alt=""/>
-                <div className="portfolio-links">
-                    <a href={`${e.linkTo}`} title="More Details"><i className="bx bx-link"></i></a>
-                </div>
+                <a href={`${e.linkTo}`} title="More Details">Title Sample: {e.title}</a>
             </div>
         </div>
     }
@@ -47,7 +44,7 @@ export const Portfolio = () => {
                             return portfolioSelect === "portfolio-item" ? item.filterType !== null : item.filterType === `${portfolioSelect}`;
                         })
                         .map((item, index) => (
-                            <PortfolioItem key={index} filterType={item.filterType} image={item.image} linkTo={item.linkTo} />
+                            <PortfolioItem key={index} filterType={item.filterType} title={item.title} linkTo={item.linkTo} />
                         ))}
                 </div>
 

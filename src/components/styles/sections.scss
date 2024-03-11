@@ -236,6 +236,11 @@ section {
 --------------------------------------------------------------*/
 .portfolio {
 
+  .portfolio-container{
+    font-size: 1.2rem;
+    margin-left: 5rem;
+  }
+
   .portfolio-item {
     margin-bottom: 30px;
   }
@@ -275,20 +280,6 @@ section {
     position: relative;
     overflow: hidden;
     z-index: 1;
-
-    $portfolio_wrap_spacing: 0;
-    &::before {
-      content: "";
-      background: rgba($white, 0.5);
-      position: absolute;
-      left: $portfolio_wrap_spacing;
-      right: $portfolio_wrap_spacing;
-      top: $portfolio_wrap_spacing;
-      bottom: $portfolio_wrap_spacing;
-      transition: all ease-in-out 0.3s;
-      z-index: 2;
-      opacity: 0;
-    }
 
     .portfolio-links {
       opacity: 1;
