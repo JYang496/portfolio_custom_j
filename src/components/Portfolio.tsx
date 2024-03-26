@@ -1,8 +1,16 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {items} from "../data/items";
 
 export const Portfolio = () => {
 
+    const [portfolioSelect,setPortfolioSelect] = useState('portfolio-item')
+    const [filterItems, setFilterItems] = useState(items)
+    useEffect(()=>{
+        setFilterItems(items
+            .filter(function (item) {
+                return portfolioSelect === "portfolio-item" ? item.filterType !== null : item.filterType === `${portfolioSelect}`;
+            }))
+    },[portfolioSelect])
     const PortfolioItem = (e: any) =>{
         return <div className={`portfolio-item ${e.filterType}`}>
             <div className="portfolio-wrap">
@@ -11,7 +19,6 @@ export const Portfolio = () => {
         </div>
     }
 
-    const [portfolioSelect,setPortfolioSelect] = useState('portfolio-item')
     function onSelectFilter(type:string = 'portfolio-item') {
         setPortfolioSelect(type)
     }
@@ -39,14 +46,12 @@ export const Portfolio = () => {
                 </div>
 
                 <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-                    {items
-                        .filter(function (item) {
-                            return portfolioSelect === "portfolio-item" ? item.filterType !== null : item.filterType === `${portfolioSelect}`;
-                        })
+                    {filterItems
                         .map((item, index) => (
                             <PortfolioItem key={index} filterType={item.filterType} title={item.title} linkTo={item.linkTo} />
                         ))}
                 </div>
+                <div className="pagination">Total item: {filterItems.length}</div>
 
             </div>
         </section>
