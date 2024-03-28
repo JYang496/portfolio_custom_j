@@ -1,37 +1,37 @@
 export const items = [
     {
         filterType:"filter-app",
-        title:"title one",
+        title:"title one app",
         linkTo:""
     },
     {
         filterType:"filter-web",
-        title:"two",
+        title:"two web",
         linkTo:""
     },
     {
         filterType:"filter-card",
-        title:"https://github.com/JYang496/portfolio/blob/main/src/img/portfolio/portfolio-3.jpg?raw=true",
+        title:"card 3",
         linkTo:""
     },
     {
         filterType:"filter-app",
-        title:"four",
+        title:"app 4",
         linkTo:""
     },
     {
         filterType:"filter-web",
-        title:"tw24314o",
+        title:"web 5",
         linkTo:""
     },
     {
         filterType:"filter-card",
-        title:"https://github.com/JYang496/portfolio/blob/main/src/img/portfolioraw=true",
+        title:"card 6",
         linkTo:""
     },
     {
         filterType:"filter-app",
-        title:"foursdsd",
+        title:"app 7",
         linkTo:""
     },
 ]
