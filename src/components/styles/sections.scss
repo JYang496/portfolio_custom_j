@@ -329,6 +329,21 @@ section {
 
     }
   }
+
+  .pagination{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #272829;
+  }
+  .page-button{
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+    &:hover{
+      color: $primary;
+      transition: all 0.3s ease-in-out;
+    }
+  }
 }
 
 /*--------------------------------------------------------------

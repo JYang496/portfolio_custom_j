@@ -1,13 +1,15 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {items} from "../data/items";
 
 export const Portfolio = () => {
 
+    const ITEMSPERPAGE = 5
     const [portfolioSelect,setPortfolioSelect] = useState('portfolio-item')
     const [filterItems, setFilterItems] = useState(items)
     const [currentPage, setCurrentPage] = useState(1)
     const [currentItems, setCurrentItems] = useState(items)
     const [maxPage, setMaxPage] = useState(1)
+    const [toPage, setToPage] = useState<number>(1)
 
     useEffect(()=>{
         const filtered = items
@@ -16,11 +18,11 @@ export const Portfolio = () => {
             })
         setFilterItems(filtered)
         setCurrentPage(1)
-        setMaxPage(Math.ceil(filtered.length/5))
+        setMaxPage(Math.ceil(filtered.length/ITEMSPERPAGE))
     },[portfolioSelect])
 
     useEffect(()=>{
-        setCurrentItems(filterItems.slice((currentPage-1) * 5, Math.min((currentPage-1) * 5+5, filterItems.length)))
+        setCurrentItems(filterItems.slice((currentPage-1) * ITEMSPERPAGE, Math.min((currentPage-1) * ITEMSPERPAGE+ITEMSPERPAGE, filterItems.length)))
     },[currentPage,filterItems])
 
     const PortfolioItem = (e: any) =>{
@@ -31,16 +33,27 @@ export const Portfolio = () => {
         </div>
     }
 
+    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+        let pageNum = event.target.value ? parseInt(event.target.value) : 1;
+        pageNum = Math.max(1,Math.min(maxPage,pageNum));
+        setToPage(pageNum)
+    }
+
     function onSelectFilter(type:string = 'portfolio-item') {
         setPortfolioSelect(type)
     }
 
     function onNextPage() {
-        if (currentPage < maxPage) setCurrentPage(currentPage+1)
+        if (1 <= currentPage && currentPage < maxPage) setCurrentPage(currentPage+1)
     }
 
     function onLastPage() {
-        if (currentPage > 1) setCurrentPage(currentPage-1)
+        if (1 < currentPage && currentPage <= maxPage) setCurrentPage(currentPage-1)
+    }
+
+    function jumpToPage(toPage:number) {
+        if (1 <= toPage && toPage <= maxPage) setCurrentPage(toPage)
+        setToPage(1)
     }
 
     return <>
@@ -71,11 +84,26 @@ export const Portfolio = () => {
                             <PortfolioItem key={index} filterType={item.filterType} title={item.title} linkTo={item.linkTo} />
                         ))}
                 </div>
-                <div className="pagination">
-                    <div className="last-page" onClick={()=>{onLastPage()}}>Last Page</div>
-                    Current Page: {currentPage}
-                    Max Page: {maxPage}
-                    <div className="next-page" onClick={()=>{onNextPage()}}>Next Page</div>
+                <div className="pagination justify-content-center">
+                    <div className="page-button p-3" onClick={()=>{onLastPage()}}><i className="bi bi-arrow-bar-left"></i></div>
+                    <div className="p-3">
+                        {currentPage}/{maxPage}
+                    </div>
+                    <div className="jump-to d-flex p-3">
+                        <form onSubmit={()=>{jumpToPage(1)}}>
+                            <label>
+                                to:
+                                <input type="number"
+                                       min="1"
+                                       max={maxPage}
+                                       value={toPage}
+                                       onChange={handleChange}
+                                />
+                            </label>
+                        </form>
+                        <div className="page-button" onClick={()=>{jumpToPage(toPage)}}>Jump</div>
+                    </div>
+                    <div className="page-button p-3" onClick={()=>{onNextPage()}}><i className="bi bi-arrow-bar-right"></i></div>
                 </div>
 
             </div>
